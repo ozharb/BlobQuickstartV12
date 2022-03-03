@@ -21,7 +21,7 @@ steps:
   inputs:
     redishost: 'super-awesome.redis.cache.windows.net'
     redisport: '6380'
-    redisPwdType: 'pwd'
+    redisPwdType: 'sas'
     rediskey: 'x0gIySo0MYyBxujSyRdBlfNKWZnqRdfPFAzCaFdvA8U='
     rediscachekey: 'dog1'
     redisdb: '0'
