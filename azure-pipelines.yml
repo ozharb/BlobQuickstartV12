@@ -23,6 +23,5 @@ steps:
     redisport: '6380'
     redisPwdType: 'sas'
     rediskey: 'x0gIySo0MYyBxujSyRdBlfNKWZnqRdfPFAzCaFdvA8U='
-    redisprefix: 'dog*'
-    rediscachekey: ''
+    rediscachekey: 'dog*'
     redisdb: '0'
