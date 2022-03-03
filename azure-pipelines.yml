@@ -17,11 +17,11 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-- task: redisCacheClearKey@1
+
+- task: CmdLine@2
   inputs:
-    redishost: 'super-awesome.redis.cache.windows.net'
-    redisport: '6380'
-    redisPwdType: 'sas'
-    rediskey: 'x0gIySo0MYyBxujSyRdBlfNKWZnqRdfPFAzCaFdvA8U='
-    rediscachekey: 'dog*'
-    redisdb: '0'
+    script: |
+      $ curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+      $ echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
+      $ sudo apt-get update
+      $ sudo apt-get install redis
