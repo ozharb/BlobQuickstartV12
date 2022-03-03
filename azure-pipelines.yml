@@ -18,11 +18,7 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- task: redisCacheClearKey@1
+- task: CmdLine@2
   inputs:
-    redishost: 'super-awesome.redis.cache.windows.net'
-    redisport: '6380'
-    redisPwdType: 'sas'
-    rediskey: 'x0gIySo0MYyBxujSyRdBlfNKWZnqRdfPFAzCaFdvA8U='
-    rediscachekey: $(keystodelete)
-    redisdb: '0'
+    script: 'redis-cli -h super-awesome.redis.cache.windows.net -a x0gIySo0MYyBxujSyRdBlfNKWZnqRdfPFAzCaFdvA8U= set dog1 Brian'
+    workingDirectory: 'C:\Users\M1072354\Downloads\redis-cli'
