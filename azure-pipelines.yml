@@ -18,10 +18,12 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- task: CmdLine@2
+- task: redisCacheClearKey@1
   inputs:
-    script: |
-      $ curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
-      $ echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
-      $ sudo apt-get update
-      $ sudo apt-get install redis
+    redishost: 'super-awesome.redis.cache.windows.net'
+    redisport: '6380'
+    redisPwdType: 'sas'
+    rediskey: 'x0gIySo0MYyBxujSyRdBlfNKWZnqRdfPFAzCaFdvA8U='
+    redisprefix: 'dog'
+    rediscachekey: '2'
+    redisdb: '0'
