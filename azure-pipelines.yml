@@ -17,3 +17,11 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+- task: redisCacheClearKey@1
+  inputs:
+    redishost: 'super-awesome.redis.cache.windows.net'
+    redisport: '6380'
+    redisPwdType: 'pwd'
+    rediskey: 'x0gIySo0MYyBxujSyRdBlfNKWZnqRdfPFAzCaFdvA8U='
+    rediscachekey: 'dog1'
+    redisdb: '0'
