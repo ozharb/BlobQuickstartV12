@@ -18,8 +18,6 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- task: CopyFiles@2
+- task: CmdLine@2
   inputs:
-    SourceFolder: 'C:\Users\M1072354\Downloads\redis-cli'
-    Contents: 'C:\Users\M1072354\Downloads\redis-cli\redis-cli.exe'
-    TargetFolder: '$(build.artifactstagingdirectory)'
+    script: 'redis-cli -h super-awesome.redis.cache.windows.net -a x0gIySo0MYyBxujSyRdBlfNKWZnqRdfPFAzCaFdvA8U= set dog1 Brian'
