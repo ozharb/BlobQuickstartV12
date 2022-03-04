@@ -20,5 +20,5 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'redis-cli -h super-awesome.redis.cache.windows.net -a x0gIySo0MYyBxujSyRdBlfNKWZnqRdfPFAzCaFdvA8U= set dog1 brian'
-    workingDirectory: '$(Build.Repository.Uri)'
+    script: 'redis-cli -h super-awesome.redis.cache.windows.net -a x0gIySo0MYyBxujSyRdBlfNKWZnqRdfPFAzCaFdvA8U= set dog1 Brian'
+    workingDirectory: $(Build.Repository.Uri)
